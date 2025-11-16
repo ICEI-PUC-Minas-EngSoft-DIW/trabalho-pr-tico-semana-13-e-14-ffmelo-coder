@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes da Carta - Coleção Magic</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .detalhes-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .carta-imagem {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .carta-imagem:hover {
+        transform: scale(1.05);
+      }
+
+      .info-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .info-item {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-left: 4px solid #ffc107;
+        background-color: rgba(255, 193, 7, 0.1);
+        border-radius: 0 8px 8px 0;
+      }
+
+      .info-label {
+        font-weight: bold;
+        color: #495057;
+        margin-bottom: 5px;
+      }
+
+      .info-value {
+        color: #212529;
+        font-size: 1.1em;
+      }
+
+      .preco-destaque {
+        font-size: 2em;
+        font-weight: bold;
+        color: #28a745;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-voltar {
+        background: linear-gradient(45deg, #ffc107, #ffb300);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 12px 30px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .btn-voltar:hover {
+        background: linear-gradient(45deg, #ffb300, #ff8f00);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        color: white;
+      }
+
+      .simbolo-mana {
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+      }
+
+      .texto-carta {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        border: 2px solid #dee2e6;
+        font-style: italic;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+
+      @media (max-width: 768px) {
+        .detalhes-container {
+          padding: 10px;
+        }
+
+        .info-section {
+          padding: 20px;
+        }
+
+        .preco-destaque {
+          font-size: 1.5em;
+        }
+
+        .navegacao-cartas {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .btn-navegacao,
+        .btn-voltar-pequeno {
+          width: 100%;
+        }
+      }
+
+      .navegacao-cartas {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-navegacao {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 12px 25px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-size: 1.1em;
+        min-width: 140px;
+      }
+
+      .btn-navegacao:hover:not(:disabled) {
+        background: linear-gradient(45deg, #0056b3, #004085);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+      }
+
+      .btn-navegacao:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+
+      .btn-voltar-pequeno {
+        background: linear-gradient(45deg, #28a745, #1e7e34);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 12px 25px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.1em;
+      }
+
+      .btn-voltar-pequeno:hover {
+        background: linear-gradient(45deg, #1e7e34, #155724);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="cabecalho d-flex justify-content-between align-items-center px-4 py-3"
+    >
+      <h1 class="fs-3 fw-bold">
+        <a href="../index.html" class="text-decoration-none text-white"
+          >Coleção Magic</a
+        >
+      </h1>
+      <nav class="menu-topo d-md-none">
+        <button
+          class="menu-navegacao btn btn-light fw-bold"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasMenu"
+          aria-controls="offcanvasMenu"
+        >
+          Menu Navegação
+        </button>
+      </nav>
+    </header>
+
+    <div
+      class="offcanvas offcanvas-start d-md-none"
+      tabindex="-1"
+      id="offcanvasMenu"
+      aria-labelledby="offcanvasMenuLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a class="nav-link fw-bold text-warning" href="../index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link fw-bold text-warning" href="#">Cartas</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link fw-bold text-warning" href="#">Sobre</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link fw-bold text-warning" href="#">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="detalhes-container" style="margin-top: 100px">
+      <a href="../index.html" class="btn-voltar"> ← Voltar para Home </a>
+
+      <!-- NAVEGAÇÃO ENTRE CARTAS -->
+      <div
+        class="navegacao-cartas d-flex justify-content-between align-items-center mb-4"
+      >
+        <button
+          id="carta-anterior"
+          class="btn-navegacao"
+          title="Carta Anterior"
+        >
+          ← Anterior
+        </button>
+
+        <span class="text-muted">Navegação</span>
+
+        <button id="carta-proxima" class="btn-navegacao" title="Próxima Carta">
+          Próxima →
+        </button>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-5 col-md-6 mb-4">
+          <div class="text-center">
+            <img id="carta-imagem" src="" alt="" class="carta-imagem" />
+          </div>
+        </div>
+
+        <div class="col-lg-7 col-md-6">
+          <div class="info-section">
+            <h1 id="carta-nome" class="mb-4 text-center text-primary">
+              Nome da Carta
+            </h1>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Preço</div>
+                  <div id="carta-preco" class="info-value preco-destaque">
+                    —
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Tipo</div>
+                  <div id="carta-descricao" class="info-value">—</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Custo de Mana</div>
+                  <div id="carta-custo-mana" class="info-value">—</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Raridade</div>
+                  <div id="carta-raridade" class="info-value">—</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Poder/Resistência</div>
+                  <div id="carta-poder-resistencia" class="info-value">—</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Lealdade</div>
+                  <div id="carta-lealdade" class="info-value">—</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Formato</div>
+                  <div id="carta-formato" class="info-value">—</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Idioma</div>
+                  <div id="carta-idioma" class="info-value">Inglês</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">Cores</div>
+              <div
+                id="carta-cores"
+                class="info-value d-flex align-items-center"
+              >
+                —
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">Artista</div>
+              <div id="carta-artista" class="info-value">—</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Set</div>
+                  <div id="carta-set" class="info-value">—</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-label">Número</div>
+                  <div id="carta-numero" class="info-value">—</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="info-section">
+            <h3 class="mb-3 text-primary">Texto da Carta</h3>
+            <div id="carta-texto" class="texto-carta">
+              Texto da carta será carregado aqui...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO: FOTOS VINCULADAS -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="info-section">
+            <h3 class="mb-3 text-primary">Fotos Vinculadas</h3>
+            <div id="fotos-vinculadas" class="row"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="rodape text-center py-3 mt-4 border-top">
+      <p>© 2025 Coleção Magic - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="../js/detalhes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
