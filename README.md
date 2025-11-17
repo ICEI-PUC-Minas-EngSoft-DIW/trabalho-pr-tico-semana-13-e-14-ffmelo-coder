@@ -8,14 +8,47 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 ## Informações do trabalho
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Filipe Faria Melo
+- Matricula: 730453
+- Proposta de projeto escolhida: Galeria Cartas MTG
+- Breve descrição sobre seu projeto: Galeria de cartas para Magic: The Gathering, incluindo preço, raridade e informações adicionais sobre cada carta da coleção.
+
+## Implementação da Funcionalidade Dinâmica
+
+Nesta etapa, foi implementada uma **página de estatísticas interativa** utilizando a biblioteca **Chart.js** para apresentação dinâmica dos dados da coleção de cartas Magic.
+
+### Funcionalidades Implementadas:
+
+**1. Cards de Resumo Estatístico:**
+
+- Total de cartas na coleção
+- Quantidade de cartas Mythic Rare
+- Quantidade de cartas Rare
+- Valor total da coleção em reais
+
+**2. Visualizações com Gráficos:**
+
+- **Gráfico de Pizza:** Distribuição das cartas por cores (branco, azul, preto, vermelho, verde, incolor)
+- **Gráfico de Barras:** Quantidade de cartas por raridade (Mythic Rare, Rare, Uncommon, Common)
+- **Gráfico de Linha:** Distribuição de custo de mana convertido das cartas
+- **Gráfico de Barras Horizontais:** Tipos de cartas (Artifact, Creature, Instant, Sorcery, Planeswalker, Land, Legendary)
+- **Gráfico Doughnut:** Distribuição de cartas por categoria (Destaque, Nova)
+- **Gráfico Polar Area:** Valor médio das cartas por categoria
+
+**3. Carregamento Dinâmico:**
+
+- Todos os dados são carregados dinamicamente via API REST (JSON Server)
+- Os gráficos são gerados automaticamente a partir dos dados da coleção
+- Interface responsiva e adaptável para diferentes dispositivos
+
+**4. Navegação:**
+
+- Link "Estatísticas" adicionado ao menu principal
+- Acesso rápido às visualizações a partir da página inicial
+
+A implementação permite uma análise visual completa da coleção, facilitando a compreensão dos padrões de distribuição de cores, raridade, custos e valores das cartas.
 
 **Print da tela com a implementação**
-
-<< Coloque aqui uma breve explicação da implementação feita nessa etapa>>
 
 ![alt text](imgs/img1.png)
 
