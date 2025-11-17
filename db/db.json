@@ -310,6 +310,144 @@
           "imagem": "img/set-symbols/big-score.png"
         }
       ]
+    },
+    {
+      "id": 10,
+      "nome": "Soul Warden",
+      "preco": "BRL 8,99",
+      "descricao": "Creature — Human Cleric",
+      "custoMana": "W",
+      "cores": [
+        "branco"
+      ],
+      "raridade": "Common",
+      "categoria": "Nova",
+      "imagem": "img/cartas/mm3-24-soul-warden.jpg",
+      "resumo": "Criatura clássica que ganha vida sempre que outra criatura entra no campo de batalha.",
+      "detalhes": {
+        "poder": "1",
+        "resistencia": "1",
+        "texto": "Whenever another creature enters the battlefield, you gain 1 life.",
+        "artista": "Randy Gallegos",
+        "set": "Modern Masters 2017",
+        "numero": "24/249",
+        "formato": "Modern, Legacy, Vintage, Commander"
+      },
+      "fotosVinculadas": [
+        {
+          "titulo": "Arte Completa - Soul Warden",
+          "imagem": "img/cartas/mm3-24-soul-warden.jpg"
+        },
+        {
+          "titulo": "Símbolo de Mana Branco",
+          "imagem": "img/mana/W.svg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "nome": "Sauron, Lord of the Rings",
+      "preco": "BRL 7,00",
+      "descricao": "Legendary Creature — Avatar Horror",
+      "custoMana": "5UBR",
+      "cores": [
+        "azul",
+        "preto",
+        "vermelho"
+      ],
+      "raridade": "Mythic Rare",
+      "categoria": "Nova",
+      "imagem": "img/cartas/ltc-4-sauron-lord-of-the-rings.jpg",
+      "resumo": "Criatura lendária poderosa inspirada no vilão de O Senhor dos Anéis, com habilidades devastadoras.",
+      "detalhes": {
+        "poder": "9",
+        "resistencia": "9",
+        "texto": "When you cast this spell, amass Orcs 5, mill five cards, then return a creature card from your graveyard to the battlefield.\n\nTrample\n\nWhenever a commander an opponent controls dies, the Ring tempts you.",
+        "artista": "Alex Brock",
+        "set": "Tales of Middle-earth Commander",
+        "numero": "0004",
+        "formato": "Legacy, Vintage, Commander"
+      },
+      "fotosVinculadas": [
+        {
+          "titulo": "Arte Completa - Sauron, Lord of the Rings",
+          "imagem": "img/cartas/ltc-4-sauron-lord-of-the-rings.jpg"
+        },
+        {
+          "titulo": "Símbolo de Mana Azul",
+          "imagem": "img/mana/U.svg"
+        },
+        {
+          "titulo": "Símbolo de Mana Preto",
+          "imagem": "img/mana/B.svg"
+        },
+        {
+          "titulo": "Símbolo de Mana Vermelho",
+          "imagem": "img/mana/R.svg"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "Incarnation Technique",
+      "preco": "BRL 56,48",
+      "descricao": "Sorcery",
+      "custoMana": "4B",
+      "cores": [
+        "preto"
+      ],
+      "raridade": "Rare",
+      "categoria": "Nova",
+      "imagem": "img/cartas/c21-41-incarnation-technique.jpg",
+      "resumo": "Feitiço com Demonstrate que permite trazer criaturas do cemitério ao campo de batalha.",
+      "detalhes": {
+        "poder": "-",
+        "resistencia": "-",
+        "texto": "Demonstrate (When you cast this spell, you may copy it. If you do, choose an opponent to also copy it.)\n\nMill five cards, then return a creature card from your graveyard to the battlefield.",
+        "artista": "Alexander Mokhov",
+        "set": "Commander 2021",
+        "numero": "41/81",
+        "formato": "Legacy, Vintage, Commander"
+      },
+      "fotosVinculadas": [
+        {
+          "titulo": "Arte Completa - Incarnation Technique",
+          "imagem": "img/cartas/c21-41-incarnation-technique.jpg"
+        },
+        {
+          "titulo": "Símbolo de Mana Preto",
+          "imagem": "img/mana/B.svg"
+        }
+      ]
+    },
+    {
+      "nome": "Lightning Bolt",
+      "preco": "BRL 8,50",
+      "descricao": "Instant",
+      "custoMana": "R",
+      "cores": [
+        "vermelho"
+      ],
+      "raridade": "Common",
+      "categoria": "Nova",
+      "imagem": "img/cartas/clu-141-lightning-bolt.jpg",
+      "resumo": "Feitiço instantâneo clássico que causa 3 pontos de dano.",
+      "detalhes": {
+        "poder": "-",
+        "resistencia": "-",
+        "texto": "Lightning Bolt deals 3 damage to any target.",
+        "artista": "Christopher Rush",
+        "set": "Alpha",
+        "numero": "161/295",
+        "formato": "Legacy, Vintage, Commander"
+      },
+      "fotosVinculadas": [
+        {
+          "titulo": "Arte Original - Lightning Bolt",
+          "imagem": "img/cartas/clu-141-lightning-bolt.jpg"
+        }
+      ],
+      "id": 13
     }
   ]
 }

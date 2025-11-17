@@ -1,4 +1,3 @@
-
 # Trabalho Prático 07 - Semanas 13 e 14
 
 A partir dos dados cadastrados na etapa anterior, vamos trabalhar formas de apresentação que representem de forma clara e interativa as informações do seu projeto. Você poderá usar gráficos (barra, linha, pizza), mapas, calendários ou outras formas de visualização. Seu desafio é entregar uma página Web que organize, processe e exiba os dados de forma compreensível e esteticamente agradável.
@@ -18,6 +17,20 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 << Coloque aqui uma breve explicação da implementação feita nessa etapa>>
 
-<<  COLOQUE A IMAGEM TELA 1 AQUI >>
+![alt text](imgs/img1.png)
 
-<<  COLOQUE A IMAGEM TELA 2 AQUI >>
+![alt text](imgs/img2.png)
+
+![alt text](imgs/img3.png)
+
+![alt text](imgs/listar_cartas.png)
+
+![alt text](imgs/listar_por_id.png)
+
+![alt text](imgs/post.png)
+
+![alt text](imgs/img_com_bolt.png)
+
+![alt text](imgs/img2_com_bolt.png)
+
+![alt text](imgs/delete.png)
